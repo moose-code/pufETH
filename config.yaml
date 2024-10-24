@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: envio-indexer
+networks:
+- id: 1
+  start_block: 0
+  contracts:
+  - name: PufferVaultV3
+    address:
+    - 0xD9A442856C234a39a81a089C06451EBAa4306a72
+    handler: src/EventHandlers.ts
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: AssetsWithdrawnToday(uint256 withdrawalAmount)
+    - event: AuthorityUpdated(address authority)
+    - event: ClaimedWithdrawals(uint256[] requestIds)
+    - event: DailyWithdrawalLimitReset()
+    - event: DailyWithdrawalLimitSet(uint96 oldLimit, uint96 newLimit)
+    - event: Deposit(address indexed sender, address indexed owner, uint256 assets, uint256 shares)
+    - event: EIP712DomainChanged()
+    - event: ExitFeeBasisPointsSet(uint256 previousFee, uint256 newFee)
+    - event: Initialized(uint64 version)
+    - event: LidoWithdrawal(uint256 expectedWithdrawal, uint256 actualWithdrawal)
+    - event: RequestedWithdrawals(uint256[] requestIds)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+    - event: TransferredETH(address indexed to, uint256 amount)
+    - event: UpdatedTotalRewardsAmount(uint256 previousTotalRewardsAmount, uint256 newTotalRewardsAmount, uint256 depositedETHAmount)
+    - event: Upgraded(address indexed implementation)
+    - event: Withdraw(address indexed sender, address indexed receiver, address indexed owner, uint256 assets, uint256 shares)
+rollback_on_reorg: false

@@ -1,0 +1,105 @@
+type PufferVaultV3_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type PufferVaultV3_AssetsWithdrawnToday {
+  id: ID!
+  withdrawalAmount: BigInt!
+}
+
+type PufferVaultV3_AuthorityUpdated {
+  id: ID!
+  authority: String!
+}
+
+type PufferVaultV3_ClaimedWithdrawals {
+  id: ID!
+  requestIds: [BigInt!]!
+}
+
+type PufferVaultV3_DailyWithdrawalLimitReset {
+  id: ID!
+}
+
+type PufferVaultV3_DailyWithdrawalLimitSet {
+  id: ID!
+  oldLimit: BigInt!
+  newLimit: BigInt!
+}
+
+type PufferVaultV3_Deposit {
+  id: ID!
+  sender: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type PufferVaultV3_EIP712DomainChanged {
+  id: ID!
+}
+
+type PufferVaultV3_ExitFeeBasisPointsSet {
+  id: ID!
+  previousFee: BigInt!
+  newFee: BigInt!
+}
+
+type PufferVaultV3_Initialized {
+  id: ID!
+  version: BigInt!
+}
+
+type PufferVaultV3_LidoWithdrawal {
+  id: ID!
+  expectedWithdrawal: BigInt!
+  actualWithdrawal: BigInt!
+}
+
+type PufferVaultV3_RequestedWithdrawals {
+  id: ID!
+  requestIds: [BigInt!]!
+}
+
+type PufferVaultV3_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+
+type PufferVaultV3_TransferredETH {
+  id: ID!
+  to: String!
+  amount: BigInt!
+}
+
+type PufferVaultV3_UpdatedTotalRewardsAmount {
+  id: ID!
+  previousTotalRewardsAmount: BigInt!
+  newTotalRewardsAmount: BigInt!
+  depositedETHAmount: BigInt!
+}
+
+type PufferVaultV3_Upgraded {
+  id: ID!
+  implementation: String!
+}
+
+type PufferVaultV3_Withdraw {
+  id: ID!
+  sender: String!
+  receiver: String!
+  owner: String!
+  assets: BigInt!
+  shares: BigInt!
+}
+
+type User {
+  id: ID!
+  address: String!
+  balance: BigInt!
+}
